@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#003f8f" />
+  <meta name="description" content="Ferramenta offline para condução, avaliação individual e relatório das aulas práticas de Instalações Elétricas Prediais." />
+  <title>AvaliaPrática SENAI | Instalações Prediais</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="assets/icon-192.png" />
+  <link rel="apple-touch-icon" href="assets/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-block">
+        <img src="assets/logo-senai-hub.svg" alt="SENAI HUB" class="brand-logo" />
+        <div>
+          <p class="eyebrow">Ferramenta didática offline</p>
+          <h1>AvaliaPrática — Instalações Elétricas Prediais</h1>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <button class="ghost-btn" id="installBtn" hidden>Instalar PWA</button>
+        <button class="ghost-btn" id="themeBtn" title="Alternar tema">Tema</button>
+      </div>
+    </header>
+
+    <nav class="nav-tabs" aria-label="Navegação principal">
+      <button class="nav-btn active" data-view="dashboard">Painel</button>
+      <button class="nav-btn" data-view="students">Alunos</button>
+      <button class="nav-btn" data-view="activities">Atividades</button>
+      <button class="nav-btn" data-view="evaluation">Avaliação</button>
+      <button class="nav-btn" data-view="reports">Relatórios</button>
+      <button class="nav-btn" data-view="backup">Backup</button>
+    </nav>
+
+    <main id="app" class="content" tabindex="-1"></main>
+
+    <footer class="footer">
+      <span>SENAI HUB Inovação e Tecnologia</span>
+      <span>Desenvolvido para acompanhamento prático individual</span>
+    </footer>
+  </div>
+
+  <template id="emptyStateTemplate">
+    <div class="empty-state">
+      <div class="empty-icon">⚡</div>
+      <h3>Nenhum registro encontrado</h3>
+      <p>Cadastre alunos ou selecione uma atividade para começar.</p>
+    </div>
+  </template>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
